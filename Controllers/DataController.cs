@@ -36,7 +36,8 @@ public class DataController : ControllerBase
                 var parts = line.Split(';');
                 if (parts.Length != 3) return BadRequest("Неверный формат CSV.");
 
-                var date = DateTime.Parse(parts[0], null, DateTimeStyles.RoundtripKind);
+                if (!DateTime.TryParseExact(parts[0], "yyyy-MM-ddTHH-mm-ss.ffffZ", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out var date)) return BadRequest("Неверный формат даты. Ожидается ГГГГ-ММ-ДДТчч-мм-сс.ммммZ");
+
                 var execTime = double.Parse(parts[1], CultureInfo.InvariantCulture);
                 var value = double.Parse(parts[2], CultureInfo.InvariantCulture);
 
