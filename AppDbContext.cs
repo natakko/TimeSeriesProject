@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TimescaleProject.Models;
+using TimeSeriesProject.Models;
 
-namespace TimescaleProject;
+namespace TimeSeriesProject;
 
 public class AppDbContext : DbContext
 {

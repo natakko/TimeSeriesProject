@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace TimescaleProject.Models;
+namespace TimeSeriesProject.Models;
 
 public class FileResult
 {

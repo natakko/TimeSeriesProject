@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using TimescaleProject;
-using TimescaleProject.Models;
+using TimeSeriesProject;
+using TimeSeriesProject.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TimescaleProject.Models;
+using TimeSeriesProject.Models;
 using System.Globalization;
 
-namespace TimescaleProject.Controllers;
+namespace TimeSeriesProject.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -54,7 +54,7 @@ public class DataController : ControllerBase
         var sorted = dataPoints.OrderBy(p => p.Date).ToList();
         var values = dataPoints.Select(p => p.Value).OrderBy(v => v).ToList();
 
-        var result = new TimescaleProject.Models.FileResult
+        var result = new TimeSeriesProject.Models.FileResult
         {
             FileName = file.FileName,
             FirstOperationDate = sorted.First().Date,
